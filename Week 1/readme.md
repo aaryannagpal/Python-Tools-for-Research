@@ -1,1 +1,1 @@
-#### Since this week was a recap of Python basics, I am not adding any new concepts.
+Used various functions and methods to explore the ```string``` library. ```numpy``` was introduced as well.
