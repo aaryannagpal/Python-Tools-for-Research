@@ -159,3 +159,18 @@ Using ```np.any(*condition*)``` we can check if an array as any element that sat
 x = 20
 not np.any([x%i == 0 for i in range(2, x)]) # to check if x is prime or not
 ```
+## Matplotlib and Pyplot
+Since Matplotlib is a huge library, we used Pyplot for our task. Pyplot is a collection of functions that make matplotlib work like Matlab.
+
+We access it by ```import matplotlib.pyplot as plt```.
+
+Every plot is shown by using ```plt.show()```.
+
+### plt.plot
+This function can be used to plot lines and markers. 
+
+The simplest version of plot has just one argument, and it specifies the y-axis values that are to be plotted, against its corresponding index value on the x-axis. Otherwise, the plot function takes in 2 values, with the first one corressponding to the x-axis and the second one corressponding to the y-axis.
+
+A third argument to the plot function can be given, which is a format string that specifies color, marker, and line type for the plot, known as <b>Keyword Arguments</b>.
+
+<i>Keyword argument is an argument which is supplied to the function by explicitly naming each parameter and specifying its value.</i>
