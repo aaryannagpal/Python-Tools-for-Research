@@ -173,4 +173,12 @@ The simplest version of plot has just one argument, and it specifies the y-axis 
 
 A third argument to the plot function can be given, which is a format string that specifies color, marker, and line type for the plot, known as <b>Keyword Arguments</b>.
 
-<i>Keyword argument is an argument which is supplied to the function by explicitly naming each parameter and specifying its value.</i>
+_**Keyword argument is an argument which is supplied to the function by explicitly naming each parameter and specifying its value**_
+
+### Customizing the Plots
+- ```plt.xlabel``` and ```plt.ylabel``` is used to set the names for the axes. The label support LaTeX format as well.
+- ```plt.axis``` are used to define custom axis sizes. The format for this is ```plt.axis(xmin, xmax, ymin, ymax)```
+
+- To add legend to the plots, first the keyword argument ```label``` is mentioned while initialising the plots. To show the legend in the plots, ```plt.legend()``` is used. An additional keyword argument ```loc``` is used for specifying the specific location of the legend. Eg: ```plt.legend("Upper Left")```
+- We use ```plt.savefig("name.type")``` to save the plot in the working directory.
+- ```plt.semilogx()``` plots the x-axes on a log scale and the y in the original scale, ```plt.semilogy()``` plots the y-axes on the log scale and the x in the original scale, ```plt.loglog()``` plots both x and y on logarithmic scales.
