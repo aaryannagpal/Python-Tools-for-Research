@@ -159,6 +159,11 @@ Using ```np.any(*condition*)``` we can check if an array as any element that sat
 x = 20
 not np.any([x%i == 0 for i in range(2, x)]) # to check if x is prime or not
 ```
+#### Sum in NumPy
+To get the sum of all the elements over an array, ```np.sum()``` is used.
+
+Apart from the array argument, we can specify the axes for summation for more than one dimensional arrays. ```axis=0``` is for summing over columns, and ```axis=1``` is for summing over the rows.
+
 ## Matplotlib and Pyplot
 Since Matplotlib is a huge library, we used Pyplot for our task. Pyplot is a collection of functions that make matplotlib work like Matlab.
 
@@ -178,7 +183,6 @@ _**Keyword argument is an argument which is supplied to the function by explicit
 ### Customizing the Plots
 - ```plt.xlabel``` and ```plt.ylabel``` is used to set the names for the axes. The label support LaTeX format as well.
 - ```plt.axis``` are used to define custom axis sizes. The format for this is ```plt.axis(xmin, xmax, ymin, ymax)```
-
 - To add legend to the plots, first the keyword argument ```label``` is mentioned while initialising the plots. To show the legend in the plots, ```plt.legend()``` is used. An additional keyword argument ```loc``` is used for specifying the specific location of the legend. Eg: ```plt.legend("Upper Left")```
 - We use ```plt.savefig("name.type")``` to save the plot in the working directory.
 - ```plt.semilogx()``` plots the x-axes on a log scale and the y in the original scale, ```plt.semilogy()``` plots the y-axes on the log scale and the x in the original scale, ```plt.loglog()``` plots both x and y on logarithmic scales.
@@ -195,3 +199,10 @@ Some keyword arguments:
 - ```histtype``` is used to set a particular type of histogram
 - ```cumulative = True``` for creating a cumulative graph
 - ```normed = True``` for normalizing the y-axis as propotions of data rather than frequency of data points.
+
+## Randomness and Time
+### Methods for Random
+- ```random.choice``` used to obtain a random choice from the list of elements given in the input of the method. Eg, ```random.choice(["H", "T"])``` for a coin toss. Can use ```range()``` as well.
+- ```random.randint``` for obtaining random integers within a range.
+
+### Methods for Time
