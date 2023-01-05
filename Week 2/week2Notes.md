@@ -152,7 +152,7 @@ Use ```np.shape``` to know the array's dimensions and use ```np.size``` to know 
 #### Random in NumPy
 NumPy has its own random module which can be accessed using ```np.random```
 
-To create an array of 10 elements with random uniform distribution, we type ```np.random.random(10)```
+To create an array of 10 elements with random uniform distribution, we type ```np.random.random(10)``` and ```np.random.normal(10)``` for random normal distribution.
 Using ```np.any(*condition*)``` we can check if an array as any element that satisfies the condition given. Similarly, ```np.all(*condition*)``` can be used to check if all the elements in the array satisfy the condition. In both cases, a Boolean value is returned.
 
 ```
@@ -182,3 +182,16 @@ _**Keyword argument is an argument which is supplied to the function by explicit
 - To add legend to the plots, first the keyword argument ```label``` is mentioned while initialising the plots. To show the legend in the plots, ```plt.legend()``` is used. An additional keyword argument ```loc``` is used for specifying the specific location of the legend. Eg: ```plt.legend("Upper Left")```
 - We use ```plt.savefig("name.type")``` to save the plot in the working directory.
 - ```plt.semilogx()``` plots the x-axes on a log scale and the y in the original scale, ```plt.semilogy()``` plots the y-axes on the log scale and the x in the original scale, ```plt.loglog()``` plots both x and y on logarithmic scales.
+
+### plt.hist
+
+Used to create histograms for a dataset.
+
+```np.hist(x)``` is used to create histograms for the data set ```x```. By default, hist uses 10 evenly spaced bins and optimizes both bin width and bin locations. To have custom bins and binwidth, the keyword parameter ```bins```. For _n_ number of bins, we write either ```bins = n``` or for specific spaces between values, we write ```bins = linspace(start, end, n+1)```.
+
+```plt.subplot``` enables us to have several subplots within each figure and takes three arguments where the first two specify the number of rows and the number of columns in the subplot, and the third argument gives the plot number. The plot number always starts at 1 and are incremented across rows first.
+
+Some keyword arguments: 
+- ```histtype``` is used to set a particular type of histogram
+- ```cumulative = True``` for creating a cumulative graph
+- ```normed = True``` for normalizing the y-axis as propotions of data rather than frequency of data points.
