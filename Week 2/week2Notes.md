@@ -206,3 +206,11 @@ Some keyword arguments:
 - ```random.randint``` for obtaining random integers within a range.
 
 ### Methods for Time
+- ```time.clock()``` is used to obtain the current time. (Can use 2 variables to store time stamps and find their difference to see time elapsed.
+
+## Randome Walks
+- Using NumPy, we can first create a (2,5) array of displacements. For this case, we use ```delta_x = np.random.normal(0, 1, (2,5))```. The first row is the displacement on the x-axis and the the second row is the displacement on the y-axis.
+- Now we use ```np.cumsum``` to calculate the cumulative sum taken over the columns. This helps in understanding the path of the displacement, compared with the starting point.
+- Since random walks start from the origin, we concatenate zeros to our array. Taking ```X_0 = np.array([[0],[0]])``` and use ```np.concatenate((X_0, np.cumsum(delta_X, axis = 1)), axis = 1)```
+
+- - -
