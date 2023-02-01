@@ -34,7 +34,7 @@ We will download the data from NCBI (National Center for Biotechnology Informati
 
 Visit [NCBI](https://www.ncbi.nlm.nih.gov/), change the filter on the seach bar from _All Databases_ to _Nucleotide_ and search _NM\_207618.2_.
 
-The following page should open: [NM_207618.2](https://www.ncbi.nlm.nih.gov/nuccore/256418990). Once opened, click on [FASTA](https://www.ncbi.nlm.nih.gov/nuccore/NM_207618.2?report=fasta) and copy the sequence from the second line (starting with G and ending with T). Paste the sequence on a text editor and save it as ```data.txt```.
+The following page should open: [NM_207618.2](https://www.ncbi.nlm.nih.gov/nuccore/256418990). Once opened, click on [FASTA](https://www.ncbi.nlm.nih.gov/nuccore/NM_207618.2?report=fasta) and copy the sequence from the second line (starting with G and ending with T). Paste the sequence on a text editor and save it as ```dna.txt```.
 
 Now, go back to the page [NM_207618.2](https://www.ncbi.nlm.nih.gov/nuccore/256418990) and see the CDS column on the page. Copy the sequence written in _/translation = ""_ and paste it on a text editor then save this as ```protein.txt```.
 
