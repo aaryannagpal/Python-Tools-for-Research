@@ -39,3 +39,17 @@ The following page should open: [NM_207618.2](https://www.ncbi.nlm.nih.gov/nucco
 Now, go back to the page [NM_207618.2](https://www.ncbi.nlm.nih.gov/nuccore/256418990) and see the CDS column on the page. Copy the sequence written in _/translation = ""_ and paste it on a text editor then save this as ```protein.txt```.
 
 ### Importing data on Python
+Open the downloaded DNA file using the ```open()``` statement and replace the empty lines with ```""```.
+Added the ```translate.py```dictionary as well.
+
+### Translation
+First, for every substring of size 3, the revelant value is searched and saved.
+Checking the length if it i. divisible by 3. If yes, loop over the sequence and for each iteration, extract a single codon. 
+Using the codon, the result is stored.
+
+Repeat this for every 3 sequences to have a string of proteins, which is then stored.
+
+### Comparision
+Since the protein translation of the DNA only exist from 21 to 935 on the website, we translate from 20th index to 934th by writing ```translate[20:935]```.
+
+The protein file is opened on the editor and compared with the result we obtained.
