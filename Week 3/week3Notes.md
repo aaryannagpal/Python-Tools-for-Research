@@ -64,5 +64,24 @@ The efficieny is increased when we convert the string to a common case, either l
 
 The *Counter* module can be used for the same task as well. We first ```from collections import Counter```and then write ```Counter(text.split(" "))```. On returning it, we receive the same result but faster.
 
-### Book reader function
-We now create book reader function, which takes the title of the book (the path) as an argument and returns it as a string
+### Book Reader and Word Statistics Function
+We now create book reader function, which takes the title of the book (the path) as an argument and returns it as a string.
+```
+ def read_book(title_path):
+ """
+ Read a book and return it as a string.
+ """
+ with open(title_path, "r", encoding = "utf8") as current_file:
+  text = current_file.read()
+  text = text.replace("\n", '').replace("\r", '')
+ return text
+```
+Creating a function that gives the statistics for unique words in the book and their frequencies.
+```
+def word_stats(word_counts):
+  """Return number of unique words and word frequencies"""
+  num_unique = len(word_counts)
+  counts = word_counts.values()
+  return (num_counts, counts)
+```
+### Reading multiple files
