@@ -53,3 +53,16 @@ Repeat this for every 3 sequences to have a string of proteins, which is then st
 Since the protein translation of the DNA only exist from 21 to 935 on the website, we translate from 20th index to 934th by writing ```translate[20:935]```.
 
 The protein file is opened on the editor and compared with the result we obtained.
+
+## Language Processing
+Project Gutenberg is one of the oldest repository of digitally converted books, which we will use to experiment on for this Case Study.
+
+### Some prerequisites
+We create a random string and count the number of unique words in that string. We use the method ```.split(' ')``` for spliting the words from the space character between them. We then count each word by making a dictionary and updating it as we loop through the list of words.
+
+The efficieny is increased when we convert the string to a common case, either lower or upper, and skip over the punctuation marks. We can skip over the punctuations by creating a list of them and for each element in the list, use ```text.replace(element, "")```.
+
+The *Counter* module can be used for the same task as well. We first ```from collections import Counter```and then write ```Counter(text.split(" "))```. On returning it, we receive the same result but faster.
+
+### Book reader function
+We now create book reader function, which takes the title of the book (the path) as an argument and returns it as a string
