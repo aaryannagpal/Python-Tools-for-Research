@@ -85,3 +85,51 @@ def word_stats(word_counts):
   return (num_counts, counts)
 ```
 ### Reading multiple files
+To read directories, we use the ```os``` module. Reading the directories where books are kept using ```book_dir = "./Books"``` and ```listdir``` which returns a list of the contents of the directory.
+Iterating over them:
+```
+for language in os.listdir(book_dir):
+ for author in os.listdir(book_dir + "/" + language):
+  for title in os.listdir(book_dir + "/" + language + "/" author):
+   inputfile = book_dir + "/" + language + "/" author + "/" + title
+   print(inputfile)
+   text = read_book(inputfile)
+   (num_unique, counts) = word_stats(count_words(text))
+```
+**Using Pandas**
+
+We import the module using ```import pandas as pd```. 
+
+A table using pandas is defined by ```table = pd.DataFrame(columns = ("name", "age"))``` and to access a location or add a row in that table, ```table.loc``` method is used.
+
+Eg: ```table.loc[1] = "James", 22```, the first row now has the been filled by "James" and 22.
+
+Now, modifying our multi-file read code w.r.t pandas:
+```
+import pandas as pd
+stats = pd.DataFrame(columns = ("language", "author", "title", "length", unique"))
+title_num = 1
+for language in os.listdir(book_dir):
+ for author in os.listdir(book_dir + "/" + language):
+  for title in os.listdir(book_dir + "/" + language + "/" author):
+   inputfile = book_dir + "/" + language + "/" author + "/" + title
+   #print(inputfile)
+   text = read_book(inputfile)
+   (num_unique, counts) = word_stats(count_words(text))
+   stats.loc(title_num) = language, author, title, sum(counts), num_unique
+   title_num += 1
+```
+To access the top 5 rows of the table, we use the ```stats.head()``` method and to access the bottom 5, we use ```stats.tail()``` method.
+
+To modify something, like capitalising the author name or removing the ".txt" extension from file names, we change the following:
+author --> author.capitalize()
+title --> title.replace(".txt", "")
+
+### Plotting the book statistics
+We use code plt.plot(stats.length, stats.unique, "bo") to study the relation between length of the book and the number of unique words in a book.
+
+To search for a specific column value: ```stats[stats.language == "English"]]```
+
+We can use ```plt.figure(figsize = (10,10))``` to plot multiple similar plots.
+
+## Introduction to Classification
